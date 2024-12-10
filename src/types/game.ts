@@ -5,7 +5,22 @@ export interface Card {
   isMatched: boolean;
 }
 
-export interface GameState {
+export interface Bet {
+  type: 'number' | 'color' | 'range';
+  value: string | number;
+  amount: number;
+  multiplier: number;
+}
+
+export interface GameHistory {
+  period: number;
+  result: number;
+  timestamp: Date;
+  color: 'red' | 'green';
+}
+
+export interface MergedGameState {
+  // Card Matching Game State
   cards: Card[];
   coins: number;
   betAmount: number;
@@ -14,4 +29,10 @@ export interface GameState {
   selectedCards: Card[];
   isPlaying: boolean;
   showAllCards: boolean;
+
+  // Betting Game State
+  currentPeriod: number;
+  timeRemaining: number;
+  lastResults: GameHistory[];
+  isAcceptingBets: boolean;
 }
