@@ -94,6 +94,23 @@ function App() {
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Game Selection Buttons */}
         <div className="flex justify-center space-x-4">
+        <button
+  onClick={() => {
+    setActiveGame('cards');
+    window.location.href = 'http://roulette-game-two.vercel.app/';
+  }}
+  className={`px-6 py-3 rounded-lg font-bold transition-colors ${
+    activeGame === 'cards'
+      ? 'bg-purple-600 text-white'
+      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+  }`}
+>
+  Roulette
+</button>
+
+
+
+
           <button
             onClick={() => setActiveGame('cards')}
             className={`px-6 py-3 rounded-lg font-bold transition-colors ${
